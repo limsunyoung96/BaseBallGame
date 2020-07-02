@@ -17,7 +17,7 @@ import kr.or.nextit.rank.RankModel;
 //ORDER BY CONVERT(COUNT, INT))
 public class H2DB {
 	private static final String DB_DRIVER = "org.h2.Driver";
-	private static final String DB_CONNECTION = "jdbc:h2:/BaseBallGame"; // database name
+	private static final String DB_CONNECTION = "jdbc:h2:~/BaseBallGame"; // database name
 	private static final String DB_USER = "pc44"; // user id
 	private static final String DB_PASSWORD = "pc44"; // passward
 
