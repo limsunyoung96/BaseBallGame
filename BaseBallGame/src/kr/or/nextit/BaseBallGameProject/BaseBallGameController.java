@@ -154,7 +154,7 @@ public class BaseBallGameController implements Initializable {
 			String count = String.valueOf(cnt);
 			new Alert(AlertType.INFORMATION, "성공하셨습니다.", ButtonType.FINISH).show();
 
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("../register/Register.fxml")); // fxml 생성
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/kr/or/nextit/register/Register.fxml")); // fxml 생성
 
 			loader.setControllerFactory(new Callback<Class<?>, Object>() {
 				@Override
@@ -215,7 +215,7 @@ public class BaseBallGameController implements Initializable {
 
 	@FXML
 	public void showRankAction() throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("../rank/Rank.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/kr/or/nextit/rank/Rank.fxml"));
 		Scene scene = new Scene(root);
 
 		Stage window = new Stage();
