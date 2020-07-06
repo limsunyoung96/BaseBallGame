@@ -18,13 +18,13 @@
 		<ImageView fitHeight="418.0" fitWidth="400.0"
 			layoutY="183.0" pickOnBounds="true">
 			<image>
-				<Image url="@grass.jpg" />
+				<Image url="@/kr/or/nextit/rank/grass.jpg" />
 			</image>
 		</ImageView>
 		<ImageView fitHeight="600.0" fitWidth="400.0"
 			pickOnBounds="true" preserveRatio="true">
 			<image>
-				<Image url="@world1.png" />
+				<Image url="@/kr/or/nextit/rank/world1.png" />
 			</image>
 		</ImageView>
 		<TableView fx:id="tableView" layoutX="10.0" layoutY="77.0"
@@ -38,8 +38,9 @@
 					prefWidth="120.0" text="Count" />
 			</columns>
 		</TableView>
-		<Button fx:id="closeBtn" layoutX="292.0" layoutY="537.0" mnemonicParsing="false"
-			onAction="#closeAction" prefHeight="38.0" prefWidth="77.0" text="닫기">
+		<Button fx:id="closeBtn" layoutX="292.0" layoutY="537.0"
+			mnemonicParsing="false" onAction="#closeAction" prefHeight="38.0"
+			prefWidth="77.0" text="닫기">
 			<font>
 				<Font size="19.0" />
 			</font>
@@ -54,7 +55,7 @@
 			layoutY="509.0" pickOnBounds="true" preserveRatio="true"
 			rotate="-11.3">
 			<image>
-				<Image url="@rank2.png" />
+				<Image url="@/kr/or/nextit/rank/rank2.png" />
 			</image>
 		</ImageView>
 	</children>

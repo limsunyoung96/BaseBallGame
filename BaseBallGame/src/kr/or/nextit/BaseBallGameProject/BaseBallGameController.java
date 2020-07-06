@@ -67,14 +67,15 @@ public class BaseBallGameController implements Initializable {
 	private int cnt = 0;
 
 	private void newGame() {
-		userSelect = new ArrayList<Integer>();
 		answers = new ArrayList<Integer>();
 		btn = new Button[10];
-		labels = new ArrayList<Label>();
 
 		strikeCnt = 0;
 		ballCnt = 0;
 		cnt = 0;
+		countLabel.setText(cnt + "");
+		b_result.setText(ballCnt + "");
+		s_result.setText(strikeCnt + "");
 
 		Random random = new Random();
 		do {
@@ -98,6 +99,14 @@ public class BaseBallGameController implements Initializable {
 
 		System.out.println(answers);
 
+		for (int delIndex = userSelect.size() - 1; delIndex >= 0; delIndex--) {
+
+			int delNum = userSelect.get(delIndex);
+			btn[delNum].setDisable(false); // 눌렀던 버튼 활성화
+			userSelect.remove(delIndex);
+			labels.get(delIndex).setText("");
+		}
+
 		for (int i = 0; i < 3; i++) {
 			labels.add((Label) labelGroup.getChildren().get(i)); // 라벨 넣기
 		}
@@ -105,6 +114,8 @@ public class BaseBallGameController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		labels = new ArrayList<Label>();
+		userSelect = new ArrayList<Integer>();
 		newGame();
 		labels.get(2).textProperty().addListener(new ChangeListener<String>() { // 3개 입력하면 결정 버튼 활성화
 			@Override
@@ -150,11 +161,13 @@ public class BaseBallGameController implements Initializable {
 		countLabel.setText(++cnt + " 번");
 		underlineImg.setVisible(true);
 		countLabel.setVisible(true);
-		if (strikeCnt == 3) {
+
+		if (strikeCnt == 3) { // 정답을 맞췄을 때
 			String count = String.valueOf(cnt);
 			new Alert(AlertType.INFORMATION, "성공하셨습니다.", ButtonType.FINISH).show();
 
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/kr/or/nextit/register/Register.fxml")); // fxml 생성
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/kr/or/nextit/register/Register.fxml")); // fxml
+																												// 생성
 
 			loader.setControllerFactory(new Callback<Class<?>, Object>() {
 				@Override
